@@ -1,0 +1,242 @@
+/***************************************************************
+CSS for all JSP pages
+***************************************************************/
+body {
+	margin: 0;
+	background: url(images/img1.JPG) no-repeat 30px 20px;
+	color: white;
+	font-size: 200%;
+
+}
+
+table {
+	border-collapse:collapse;
+	margin: auto;
+}
+
+td {
+	background-color: white;
+	border:2px solid black;
+	padding: 2px;
+	text-align: center;
+	color: black;
+}
+h1{
+	text-align: center;
+	color: white;
+	font-size: 400%;
+}
+
+
+#header, #footer, .content {
+	border: 0px solid;	
+}
+
+/***************************************************************
+Style of the main table
+***************************************************************/
+#main-container {
+	width: 100%;
+	height: 100%;
+}
+
+/***************************************************************
+Header style (TD tag in the first top row)
+***************************************************************/
+#header {
+	background: black;
+	color: azure;
+}
+
+/***************************************************************
+Style for the left located head menu (DIV tag at left)
+***************************************************************/
+#leftHeader {
+	background: black;
+	color: azure;
+	float: left;
+	margin-left: 10px;
+	padding: 2px;
+}
+
+/***************************************************************
+Style for the right located head menu (DIV tag at right)
+***************************************************************/
+#rightHeader {
+	background: black;
+	color: azure;
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	padding: 2px;
+}
+
+/***************************************************************
+Content styles (TD tag in the main middle row)
+***************************************************************/
+.content {
+	height: 100%;
+	background: white;
+	text-align: center;
+	vertical-align: top;
+	background: url(images/img1.JPG);
+	background-size: cover;
+	color: white;
+}
+
+/***************************************************************
+Footer style (TD tag in the last bottom row)
+***************************************************************/
+#footer {
+	text-align: center;
+	background: black;
+	color: azure;
+}
+
+/***************************************************************
+Style for the ERROR message
+***************************************************************/
+.error {
+	font-size: large;
+	color: rgb(204, 0, 0);
+}
+
+/***************************************************************
+Miscellaneous
+***************************************************************/
+.center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.noborder {
+	border: 2px solid red;	
+}
+
+/***************************************************************
+Login form (login.jsp)
+***************************************************************/
+#login_form > fieldset {
+	display: inline;
+	background-color: white;
+	border: 2px black solid;
+	border-radius: 8px;
+}
+#login_form > input[type=submit] {
+	margin-top: 5px;
+	background-color: #FFD700;
+	color: white;
+	border-radius: 8px;
+	font-size: 150%;
+}
+#login_form > legend{
+	font: 200% serif;
+}
+#login_form{
+	background: white;
+	opacity: 0.6;
+	color: black;
+	width: 30%;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	margin: 0 auto;
+}
+#order_form{
+	background: white;
+	opacity: 0.6;
+	color: black;
+	height: 100%;
+	width: 35%;
+	margin: auto;
+	font-size: 150%;
+	font-family: Bradley Hand, cursive;
+	padding-top: 60px;
+}
+#submit{
+	background-color: #FFD700;
+	color: white;
+	border-radius: 8px;
+	font-size: 130%;
+}
+#thanks_form{
+	background: white;
+	opacity: 0.6;
+	color: black;
+	margin: 0 auto;
+	font-size: 200%;
+	margin-top: 150px;
+	padding-bottom: 100px;
+	font-family: Bradley Hand, cursive;
+}
+#sorry_form{
+	background: white;
+	opacity: 0.6;
+	color: black;
+	margin: 0 auto;
+	font-size: 200%;
+	margin-top: 150px;
+	padding-bottom: 100px;
+	padding-top: 50px;
+	font-family: Bradley Hand, cursive;
+}
+#img{
+	width: 150px;
+}
+/***************************************************************
+Settings form (settings.jsp)
+***************************************************************/
+#settings_form > div > p {
+	font-size: 17px;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+
+#settings_form > input[type=submit] {
+	margin-top: 10px;
+}
+
+/***************************************************************
+List menu table (list_menu.jsp)
+***************************************************************/
+#list_menu_table {
+	margin-top: 5px;
+}
+
+#list_menu_table thead {
+	text-align: center;
+}
+
+#list_menu_table td:last-child {
+	text-align: center;
+}
+
+/***************************************************************
+List order table (list_order.jsp)
+***************************************************************/
+#list_order_table > thead > tr {
+	text-align: center;
+}
+
+#list_order_table td + td + td {
+	text-align: center;
+}
+
+#list_order_table > tbody td + td + td + td {
+	text-align: left;
+}
+
+/***************************************************************
+Make order form (list_menu.jsp)
+***************************************************************/
+#make_order {
+	margin-top: 5px;
+}
+a {
+	text-decoration: none;
+	color: azure;
+
+}
+a:hover {
+	text-decoration: underline;
+}
+

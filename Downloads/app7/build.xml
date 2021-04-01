@@ -1,0 +1,77 @@
+<project name="sample_webapp" default="delete" basedir=".">
+
+    <description>Ant build file to remove all files from the tomcat working directory</description>
+
+    <property name="dist.dir"
+              value="${basedir}/dist"/>
+    <property name="build.dir" value="${basedir}/build"/>
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="tomcat.home" value="d:/java/apache-tomcat-8.5.23"/>
+
+    <path id="class.path">
+        <fileset dir="/.idea/libraries/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${tomcat.home}/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="delete">
+        <echo>Delete folder ${dist.dir}</echo>
+        <delete>
+            <fileset dir="${dist.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="build">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/WEB-INF/classes"/>
+        <mkdir dir="${build.dir}/WEB-INF/lib"/>
+        <mkdir dir="${dist.dir}"/>
+
+
+        <echo message="Copying web content"/>
+        <copy todir="${build.dir}">
+            <fileset dir="${basedir}/WebContent">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+
+        <echo message="Copying libraries"/>
+        <copy todir="${build.dir}/WEB-INF/lib">
+            <fileset dir="/.idea/libraries/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+
+        <echo message="Compiling source code"/>
+        <javac classpathref="class.path" srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes"/>
+
+        <echo message="Copying application resources"/>
+        <copy todir="${build.dir}/WEB-INF/classes">
+            <fileset dir="${src.dir}">
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="war" depends="clean, build">
+        <war destfile="${dist.dir}/sample_webapp.war" webxml="${build.dir}/WEB-INF/web.xml">
+            <fileset dir="${build.dir}"/>
+        </war>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}">
+
+        </delete>
+
+        <delete dir="${dist.dir}">
+
+        </delete>
+    </target>
+
+</project>
